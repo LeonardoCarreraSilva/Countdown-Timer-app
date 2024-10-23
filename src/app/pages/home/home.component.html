@@ -14,3 +14,8 @@
     <button type="submit" (click)="setCard()">Set Timer</button>
   </form>
 </div>
+
+
+<div *ngIf="cardList.length != 0">
+  <app-card *ngFor="let card of cardList" title={{card.title}} date={{card.date}}/>
+</div>

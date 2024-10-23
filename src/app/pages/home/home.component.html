@@ -1,8 +1,16 @@
 <div>
   <h1>Countdown-Timer-app</h1>
-  <label>Set title:</label>
-  <input type="text" id="title" name="title" />
-  <br>
-  <label>Set date:</label>
-  <input type="datetime-local" id="start" name="date-start" />
+  <form [formGroup]="fg">
+    <mat-form-field appearance="outline">
+      <mat-label>Set title</mat-label>
+      <input matInput type="text" formControlName="title" placeholder="Enter the name of event." />
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label>Set date</mat-label>
+      <input matInput type="datetime-local" formControlName="date" placeholder="Enter the name of event." />
+    </mat-form-field>
+
+    <button type="submit" (click)="setCard()">Set Timer</button>
+  </form>
 </div>
